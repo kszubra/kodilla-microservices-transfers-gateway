@@ -18,5 +18,19 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone=http://localhost:8761/eureka/:
+
 server:
   port: 9990
+
+feign:
+  hystrix:
+    enabled: true
+
+# ACTUATOR INFO
+info:
+  app:
+    name: "Transfers-gateway"
+    version: "0.0.1"
+    profile: ${spring.profiles.active}
+  serverInfo:
+    port: ${server.port}
